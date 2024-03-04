@@ -22,6 +22,14 @@ Custom interactive interface between the OS and the user.
 
 6. Shell should support background commands using the suffix ampersand (&), i.e. the child should run in the background, meaning the shell will not wait for the child to exit before prompting the user for further input. You will need to print the creation and exit statuses of these background processes.
 
+## Special Notes
+
+1. `build` directory must exist in the top level for make.
+2. The application `shell` is in the `build` folder including generated object files.
+3. When executing a background process, return status updates are only polled once per input.
+4. Multiple background processes can be executing at once, but program names are not saved.
+5. Does not support background process initialization when the `&` is not separated by a space at the end of the command.
+6. Does not manipulate the input command futher than what `strtok` does.
 
 ## Built-in Commands
 
